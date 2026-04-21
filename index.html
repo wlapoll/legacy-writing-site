@@ -579,6 +579,15 @@
     font-weight: 500;
   }
 
+  sup.tight {
+    font-size: 0.55em;
+    margin-left: -1px;
+    margin-right: 2px;
+    position: relative;
+    top: -0.5em;
+    vertical-align: baseline;
+  }
+
   .detail {
     font-size: 0.78em;
     color: var(--ink-muted);
@@ -810,7 +819,7 @@
     <div class="hero-eyebrow">Autobiography &amp; Legacy Writing</div>
     <h1>Your story deserves<br>to be <em>remembered</em></h1>
     <p class="hero-sub">We sit with you, listen, and craft your life into a beautifully written book — something your children and grandchildren will treasure forever.</p>
-    <p class="hero-price">Create your story starting at just <strong>$997</strong></p>
+    <p class="hero-price">Create your story starting at just <strong>$700</strong></p>
     <div class="hero-actions">
       <a href="#pricing" class="btn btn-primary">View Packages</a>
       <a href="#how" class="btn btn-ghost">How It Works</a>
@@ -880,20 +889,19 @@
 
     <div class="cards">
 
-      <!-- ESSENTIALS -->
+      <!-- SCRAPBOOK STORIES -->
       <div class="card reveal">
         <div class="card-tier">Package 1</div>
-        <div class="card-name">Essentials</div>
-        <div class="card-price">$997</div>
-        <p class="card-desc">A concise, beautiful account of your life's most meaningful chapters.</p>
+        <div class="card-name">Scrapbook Stories</div>
+        <div class="card-price">$700</div>
+        <p class="card-desc">A beautiful photo-driven keepsake capturing your most cherished memories and moments.</p>
         <ul class="card-features">
-          <li><span class="icon-check">✓</span> Up to 2 interview sessions <span class="detail">(60 min each)</span></li>
-          <li><span class="icon-check">✓</span> ~15,000 word memoir</li>
+          <li><span class="icon-check">✓</span> 2 interview sessions <span class="detail">(in person or online)</span></li>
+          <li><span class="icon-check">✓</span> 15–25 page book</li>
           <li><span class="icon-check">✓</span> 1 round of revisions</li>
-          <li><span class="icon-check">✓</span> Digital PDF copy</li>
-          <li><span class="icon-check">✓</span> Photo integration</li>
-          <li class="disabled"><span class="icon-cross">—</span> Printed hardcover copies</li>
-          <li class="disabled"><span class="icon-cross">—</span> Dedicated writer<sup>1</sup></li>
+          <li><span class="icon-check">✓</span> Photo integration <span class="detail">(up to 25 photos)</span></li>
+          <li><span class="icon-check">✓</span> 1 printed hardcover copy</li>
+          <li><span class="icon-check">✓</span> Dedicated writer<sup class="tight">1</sup></li>
           <li class="disabled"><span class="icon-cross">—</span> Audio recording archive</li>
         </ul>
         <!-- REPLACE # with your Stripe Payment Link -->
@@ -914,7 +922,7 @@
           <li><span class="icon-check">✓</span> Digital PDF copy</li>
           <li><span class="icon-check">✓</span> 2 printed hardcovers <span class="detail">+$25 per additional copy</span></li>
           <li><span class="icon-check">✓</span> Photo integration</li>
-          <li><span class="icon-check">✓</span> Dedicated writer<sup>1</sup></li>
+          <li><span class="icon-check">✓</span> Dedicated writer<sup class="tight">1</sup></li>
           <li class="disabled"><span class="icon-cross">—</span> Audio recording archive</li>
         </ul>
         <!-- REPLACE # with your Stripe Payment Link -->
@@ -928,13 +936,13 @@
         <div class="card-price">$4,997</div>
         <p class="card-desc">A premium, multi-generational archive — your complete life, preserved.</p>
         <ul class="card-features">
-          <li><span class="icon-check">✓</span> Unlimited interview sessions<sup>2</sup> <span class="detail">(60 min each)</span></li>
+          <li><span class="icon-check">✓</span> Unlimited interview sessions<sup class="tight">2</sup> <span class="detail">(60 min each)</span></li>
           <li><span class="icon-check">✓</span> ~80,000+ word memoir</li>
           <li><span class="icon-check">✓</span> Unlimited revisions</li>
           <li><span class="icon-check">✓</span> Digital PDF copy</li>
           <li><span class="icon-check">✓</span> 5 printed hardcovers <span class="detail">+$25 per additional copy</span></li>
           <li><span class="icon-check">✓</span> Photo integration</li>
-          <li><span class="icon-check">✓</span> Dedicated writer<sup>1</sup></li>
+          <li><span class="icon-check">✓</span> Dedicated writer<sup class="tight">1</sup></li>
           <li><span class="icon-check">✓</span> Audio recording archive</li>
         </ul>
         <!-- REPLACE # with your Stripe Payment Link -->
@@ -953,23 +961,29 @@
       <thead>
         <tr>
           <th>Feature</th>
-          <th>Essentials</th>
+          <th>Scrapbook Stories</th>
           <th class="pop-col">Legacy</th>
           <th>Heirloom</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Interview Sessions <span class="detail">(60 min each)</span></td>
+          <td>Interview Sessions</td>
           <td><span class="t-text">2</span></td>
-          <td><span class="t-text">4</span></td>
+          <td><span class="t-text">4 <span class="detail">(60 min)</span></span></td>
           <td><span class="t-text">Unlimited<sup>2</sup></span></td>
         </tr>
         <tr>
-          <td>Word Count</td>
-          <td><span class="t-text">~15,000</span></td>
-          <td><span class="t-text">~40,000</span></td>
-          <td><span class="t-text">80,000+</span></td>
+          <td>Format</td>
+          <td><span class="t-text">In person or online</span></td>
+          <td><span class="t-text">In person or online</span></td>
+          <td><span class="t-text">In person or online</span></td>
+        </tr>
+        <tr>
+          <td>Book Length</td>
+          <td><span class="t-text">15–25 pages</span></td>
+          <td><span class="t-text">~40,000 words</span></td>
+          <td><span class="t-text">80,000+ words</span></td>
         </tr>
         <tr>
           <td>Revision Rounds</td>
@@ -978,25 +992,31 @@
           <td><span class="t-text">Unlimited</span></td>
         </tr>
         <tr>
-          <td>Digital PDF</td>
-          <td><span class="t-check">✓</span></td>
+          <td>Photo Integration</td>
+          <td><span class="t-text">Up to 25</span></td>
           <td><span class="t-check">✓</span></td>
           <td><span class="t-check">✓</span></td>
         </tr>
         <tr>
           <td>Printed Hardcovers</td>
-          <td><span class="t-cross">✕</span></td>
+          <td><span class="t-text">1 included</span></td>
           <td><span class="t-text">2 included</span></td>
           <td><span class="t-text">5 included</span></td>
         </tr>
         <tr>
           <td>Additional Copies</td>
-          <td><span class="t-cross">✕</span></td>
+          <td><span class="t-text">$25 each</span></td>
           <td><span class="t-text">$25 each</span></td>
           <td><span class="t-text">$25 each</span></td>
         </tr>
         <tr>
-          <td>Photo Integration</td>
+          <td>Digital PDF</td>
+          <td><span class="t-cross">✕</span></td>
+          <td><span class="t-check">✓</span></td>
+          <td><span class="t-check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Dedicated Writer<sup>1</sup></td>
           <td><span class="t-check">✓</span></td>
           <td><span class="t-check">✓</span></td>
           <td><span class="t-check">✓</span></td>
@@ -1017,12 +1037,6 @@
           <td>Family Tree Page</td>
           <td><span class="t-cross">✕</span></td>
           <td><span class="t-cross">✕</span></td>
-          <td><span class="t-check">✓</span></td>
-        </tr>
-        <tr>
-          <td>Dedicated Writer<sup>1</sup></td>
-          <td><span class="t-cross">✕</span></td>
-          <td><span class="t-check">✓</span></td>
           <td><span class="t-check">✓</span></td>
         </tr>
       </tbody>
@@ -1059,7 +1073,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-disclaimers">
-    <p><sup>1</sup> Dedicated Writer means you'll be paired with a single writer who handles your entire project from first interview to final draft. They're your one point of contact for questions, revisions, and conversations throughout the process. Writers may change at our discretion. </p>
+    <p><sup>1</sup> Dedicated Writer means you'll be paired with a single writer who handles your entire project from first interview to final draft. They're your one point of contact for questions, revisions, and conversations throughout the process.</p>
     <p><sup>2</sup> Unlimited interview sessions are provided at the writer's discretion based on the scope of your story. Additional sessions can always be requested if you feel there's more to tell.</p>
   </div>
   <div class="footer-bottom">
