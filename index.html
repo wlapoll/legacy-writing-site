@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Story, Beautifully Told — Legacy Writing Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf7f2;
+    --warm-white: #f3ede4;
+    --parchment: #ede6da;
+    --ink: #2c2418;
+    --ink-soft: #5a4e3c;
+    --ink-muted: #8c7f6c;
+    --accent: #8b5e3c;
+    --accent-warm: #a6723f;
+    --accent-glow: rgba(139,94,60,0.12);
+    --gold: #c49a5c;
+    --gold-dim: rgba(196,154,92,0.15);
+    --border: rgba(44,36,24,0.08);
+    --border-strong: rgba(44,36,24,0.14);
+    --surface: #fff;
+    --shadow-sm: 0 1px 3px rgba(44,36,24,0.06);
+    --shadow-md: 0 8px 30px rgba(44,36,24,0.08);
+    --shadow-lg: 0 20px 60px rgba(44,36,24,0.1);
+    --radius: 14px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ============================================
+     NAV
+     ============================================ */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(250,247,242,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .logo em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+
+  .nav-links a {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-cta {
+    background: var(--ink) !important;
+    color: var(--cream) !important;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 0.85rem !important;
+    transition: background 0.2s ease, transform 0.2s ease !important;
+  }
+
+  .nav-cta:hover { background: var(--accent) !important; transform: translateY(-1px); }
+
+  @media (max-width: 680px) {
+    nav { padding: 14px 20px; }
+    .nav-links a:not(.nav-cta) { display: none; }
+  }
+
+  /* ============================================
+     HERO
+     ============================================ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Soft radial warmth behind the text */
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(196,154,92,0.10) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  /* Decorative quote marks */
+  .hero::after {
+    content: '\201C';
+    position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28rem;
+    color: rgba(44,36,24,0.025);
+    top: -40px; left: 50%;
+    transform: translateX(-50%);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .hero-content { position: relative; z-index: 1; max-width: 720px; }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+    animation: fadeDown 0.7s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 600;
+    line-height: 1.12;
+    color: var(--ink);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    animation: fadeDown 0.7s ease 0.1s both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin: 0 auto 20px;
+    animation: fadeDown 0.7s ease 0.2s both;
+  }
+
+  .hero-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--ink-muted);
+    margin-bottom: 40px;
+    animation: fadeDown 0.7s ease 0.3s both;
+  }
+
+  .hero-price strong {
+    color: var(--ink);
+    font-size: 1.5rem;
+  }
+
+  .hero-actions {
+    display: flex; gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeDown 0.7s ease 0.4s both;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 16px 36px;
+    border: none;
+    border-radius: 100px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .btn-primary:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(139,94,60,0.25);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink-soft);
+    border: 1.5px solid var(--border-strong);
+  }
+  .btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* scroll indicator */
+  .scroll-hint {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: var(--ink-muted);
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    animation: fadeDown 0.7s ease 0.6s both;
+  }
+
+  .scroll-hint .arrow {
+    width: 1px; height: 32px;
+    background: var(--ink-muted);
+    animation: pulse-down 2s ease infinite;
+  }
+
+  @keyframes pulse-down {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.3); transform-origin: top; }
+  }
+
+  /* ============================================
+     HOW IT WORKS
+     ============================================ */
+  .how-section {
+    padding: 100px 24px;
+    background: var(--warm-white);
+  }
+
+  .how-inner { max-width: 960px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: -0.01em;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+  }
+
+  @media (max-width: 720px) {
+    .steps { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  }
+
+  .step {
+    text-align: center;
+    padding: 32px 24px;
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    opacity: 0.5;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .step h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .step p {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+
+  /* ============================================
+     PRICING
+     ============================================ */
+  .pricing-section {
+    padding: 100px 24px 60px;
+  }
+
+  .pricing-inner { max-width: 1100px; margin: 0 auto; }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: 860px) {
+    .cards { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto 80px; }
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card.popular {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md), 0 0 0 1px var(--accent);
+  }
+
+  .card.popular:hover {
+    box-shadow: var(--shadow-lg), 0 0 0 1px var(--accent);
+  }
+
+  .popular-tag {
+    position: absolute;
+    top: -13px; left: 50%; transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--cream);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    border-radius: 100px;
+  }
+
+  .card-tier {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+  }
+
+  .card.popular .card-tier { color: var(--accent); }
+
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .card-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .card-price span {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--ink-muted);
+  }
+
+  .card-desc {
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+
+  .card-features { list-style: none; flex: 1; margin-bottom: 28px; }
+
+  .card-features li {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 0;
+    font-size: 0.9rem;
+    color: var(--ink);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .card-features li:last-child { border-bottom: none; }
+
+  .icon-check, .icon-cross {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 12px;
+  }
+
+  .icon-check {
+    background: rgba(139,94,60,0.1);
+    color: var(--accent);
+  }
+
+  .icon-cross {
+    background: rgba(44,36,24,0.04);
+    color: var(--ink-muted);
+  }
+
+  .card-features li.disabled {
+    color: var(--ink-muted);
+  }
+
+  .btn-card {
+    display: block; width: 100%;
+    padding: 15px; border: none;
+    border-radius: 10px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .btn-card-outline {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--border-strong);
+  }
+  .btn-card-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-glow);
+  }
+
+  .btn-card-primary {
+    background: var(--accent);
+    color: #fff;
+    border: 1.5px solid var(--accent);
+  }
+  .btn-card-primary:hover {
+    background: var(--accent-warm);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(139,94,60,0.3);
+  }
+
+  /* ============================================
+     COMPARISON TABLE
+     ============================================ */
+  .comparison {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
+  }
+
+  .comparison .section-title { margin-bottom: 36px; }
+
+  .table-wrap {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+
+  thead th {
+    padding: 18px 20px;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-align: center;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+  }
+
+  thead th:first-child { text-align: left; }
+  thead th.pop-col { color: var(--accent); }
+
+  tbody td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  tbody td:first-child {
+    text-align: left;
+    font-weight: 500;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: rgba(44,36,24,0.015); }
+
+  .t-check {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: rgba(139,94,60,0.08);
+    color: var(--accent);
+    font-size: 14px;
+  }
+
+  .t-cross {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: rgba(44,36,24,0.04);
+    color: var(--ink-muted);
+    font-size: 13px;
+  }
+
+  .t-text { color: var(--ink-soft); font-size: 0.85rem; }
+
+  @media (max-width: 600px) {
+    thead th, tbody td { padding: 12px 10px; font-size: 0.8rem; }
+  }
+
+  /* ============================================
+     TESTIMONIAL
+     ============================================ */
+  .testimonial-section {
+    padding: 80px 24px;
+    background: var(--warm-white);
+    text-align: center;
+  }
+
+  .testimonial-inner { max-width: 620px; margin: 0 auto; }
+
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  .testimonial-attr {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    font-weight: 600;
+  }
+
+  /* ============================================
+     FOOTER CTA
+     ============================================ */
+  .footer-cta {
+    padding: 80px 24px;
+    text-align: center;
+  }
+
+  .footer-cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .footer-cta p {
+    color: var(--ink-soft);
+    font-size: 1rem;
+    margin-bottom: 32px;
+    max-width: 440px;
+    margin-left: auto; margin-right: auto;
+    line-height: 1.6;
+  }
+
+  /* ============================================
+     FOOTER
+     ============================================ */
+  footer {
+    padding: 40px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+  }
+
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* ============================================
+     ANIMATIONS
+     ============================================ */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Intersection-based fade-in */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Legacy<em>Ink</em></a>
+  <div class="nav-links">
+    <a href="#how">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#pricing" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Autobiography &amp; Legacy Writing</div>
+    <h1>Your story deserves<br>to be <em>remembered</em></h1>
+    <p class="hero-sub">We sit with you, listen, and craft your life into a beautifully written book — something your children and grandchildren will treasure forever.</p>
+    <p class="hero-price">Create your story starting at just <strong>$997</strong></p>
+    <div class="hero-actions">
+      <a href="#pricing" class="btn btn-primary">View Packages</a>
+      <a href="#how" class="btn btn-ghost">How It Works</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Discover</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="how-inner">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Three simple steps to your legacy</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>We Listen</h3>
+        <p>Through guided conversations, we capture the stories, memories, and moments that shaped your life — at your pace, on your terms.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>We Write</h3>
+        <p>Our writers transform your words into a polished, heartfelt narrative that reads like the memoir you always imagined.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>You Share</h3>
+        <p>Receive your finished book — printed, bound, and ready to hand down to the people who matter most.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Choose your package</h2>
+
+    <div class="cards">
+
+      <!-- ESSENTIALS -->
+      <div class="card reveal">
+        <div class="card-tier">Package 1</div>
+        <div class="card-name">Essentials</div>
+        <div class="card-price">$997</div>
+        <p class="card-desc">A concise, beautiful account of your life's most meaningful chapters.</p>
+        <ul class="card-features">
+          <li><span class="icon-check">✓</span> Up to 3 interview sessions</li>
+          <li><span class="icon-check">✓</span> ~15,000 word memoir</li>
+          <li><span class="icon-check">✓</span> 1 round of revisions</li>
+          <li><span class="icon-check">✓</span> Digital PDF copy</li>
+          <li class="disabled"><span class="icon-cross">—</span> Printed hardcover copies</li>
+          <li class="disabled"><span class="icon-cross">—</span> Photo integration</li>
+          <li class="disabled"><span class="icon-cross">—</span> Audio recording archive</li>
+        </ul>
+        <!-- REPLACE # with your Stripe Payment Link -->
+        <a href="#" class="btn-card btn-card-outline">Get Started</a>
+      </div>
+
+      <!-- LEGACY -->
+      <div class="card popular reveal">
+        <div class="popular-tag">Most Popular</div>
+        <div class="card-tier">Package 2</div>
+        <div class="card-name">Legacy</div>
+        <div class="card-price">$2,497</div>
+        <p class="card-desc">The full story — rich, detailed, and printed in a keepsake hardcover.</p>
+        <ul class="card-features">
+          <li><span class="icon-check">✓</span> Up to 8 interview sessions</li>
+          <li><span class="icon-check">✓</span> ~40,000 word memoir</li>
+          <li><span class="icon-check">✓</span> 3 rounds of revisions</li>
+          <li><span class="icon-check">✓</span> Digital PDF copy</li>
+          <li><span class="icon-check">✓</span> 5 printed hardcover copies</li>
+          <li><span class="icon-check">✓</span> Photo integration</li>
+          <li class="disabled"><span class="icon-cross">—</span> Audio recording archive</li>
+        </ul>
+        <!-- REPLACE # with your Stripe Payment Link -->
+        <a href="#" class="btn-card btn-card-primary">Get Started</a>
+      </div>
+
+      <!-- HEIRLOOM -->
+      <div class="card reveal">
+        <div class="card-tier">Package 3</div>
+        <div class="card-name">Heirloom</div>
+        <div class="card-price">$4,997</div>
+        <p class="card-desc">A premium, multi-generational archive — your complete life, preserved.</p>
+        <ul class="card-features">
+          <li><span class="icon-check">✓</span> Unlimited interview sessions</li>
+          <li><span class="icon-check">✓</span> ~80,000+ word memoir</li>
+          <li><span class="icon-check">✓</span> Unlimited revisions</li>
+          <li><span class="icon-check">✓</span> Digital PDF copy</li>
+          <li><span class="icon-check">✓</span> 10 printed hardcover copies</li>
+          <li><span class="icon-check">✓</span> Photo integration</li>
+          <li><span class="icon-check">✓</span> Audio recording archive</li>
+        </ul>
+        <!-- REPLACE # with your Stripe Payment Link -->
+        <a href="#" class="btn-card btn-card-outline">Contact Us</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<div class="comparison">
+  <h2 class="section-title">Full Feature Comparison</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Essentials</th>
+          <th class="pop-col">Legacy</th>
+          <th>Heirloom</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Interview Sessions</td>
+          <td><span class="t-text">3</span></td>
+          <td><span class="t-text">8</span></td>
+          <td><span class="t-text">Unlimited</span></td>
+        </tr>
+        <tr>
+          <td>Word Count</td>
+          <td><span class="t-text">~15,000</span></td>
+          <td><span class="t-text">~40,000</span></td>
+          <td><span class="t-text">80,000+</span></td>
+        </tr>
+        <tr>
+          <td>Revision Rounds</td>
+          <td><span class="t-text">1</span></td>
+          <td><span class="t-text">3</span></td>
+          <td><span class="t-text">Unlimited</span></td>
+        </tr>
+        <tr>
+          <td>Digital PDF</td>
+          <td><span class="t-check">✓</span></td>
+          <td><span class="t-check">✓</span></td>
+          <td><span class="t-check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Printed Hardcovers</td>
+          <td><span class="t-cross">✕</span></td>
+          <td><span class="t-text">5 copies</span></td>
+          <td><span class="t-text">10 copies</span></td>
+        </tr>
+        <tr>
+          <td>Photo Integration</td>
+          <td><span class="t-cross">✕</span></td>
+          <td><span class="t-check">✓</span></td>
+          <td><span class="t-check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Custom Cover Design</td>
+          <td><span class="t-cross">✕</span></td>
+          <td><span class="t-check">✓</span></td>
+          <td><span class="t-check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Audio Recording Archive</td>
+          <td><span class="t-cross">✕</span></td>
+          <td><span class="t-cross">✕</span></td>
+          <td><span class="t-check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Family Tree Page</td>
+          <td><span class="t-cross">✕</span></td>
+          <td><span class="t-cross">✕</span></td>
+          <td><span class="t-check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Dedicated Writer</td>
+          <td><span class="t-cross">✕</span></td>
+          <td><span class="t-check">✓</span></td>
+          <td><span class="t-check">✓</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section">
+  <div class="testimonial-inner reveal">
+    <div class="section-label">What Families Say</div>
+    <p class="testimonial-quote">"My mother's book sits on every grandchild's nightstand. It's the most meaningful gift our family has ever received."</p>
+    <p class="testimonial-attr">— Margaret S., daughter of a client</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="footer-cta">
+  <div class="reveal">
+    <h2>Every life has a story worth telling</h2>
+    <p>Don't let yours go unwritten. Start the conversation today — we'll handle the rest.</p>
+    <a href="#pricing" class="btn btn-primary">Choose Your Package</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 LegacyInk. All rights reserved. &nbsp;|&nbsp; <a href="#">Privacy</a> &nbsp;|&nbsp; <a href="#">Terms</a></p>
+</footer>
+
+<!-- SCROLL REVEAL SCRIPT -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
