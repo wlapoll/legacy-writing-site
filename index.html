@@ -554,6 +554,150 @@
 
   .t-text { color: var(--ink-soft); font-size: 0.85rem; }
 
+  .footnotes {
+    margin-top: 20px;
+    padding: 0 4px;
+  }
+
+  .footnotes p {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .footnotes p strong {
+    color: var(--ink-soft);
+  }
+
+  /* Apple-style superscript markers */
+  sup {
+    font-size: 0.6em;
+    vertical-align: super;
+    line-height: 0;
+    color: var(--ink-muted);
+    font-weight: 500;
+  }
+
+  /* Apple-style footer disclaimers */
+  .footer-disclaimers {
+    max-width: 780px;
+    margin: 0 auto 28px;
+    padding: 0 24px;
+  }
+
+  .footer-disclaimers p {
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+
+  .footer-disclaimers sup {
+    font-size: 0.7em;
+    margin-right: 2px;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+
+  /* ============================================
+     WHO IT'S FOR
+     ============================================ */
+  .for-section {
+    padding: 100px 24px;
+    background: var(--cream);
+  }
+
+  .for-inner { max-width: 880px; margin: 0 auto; }
+
+  .for-inner .section-title {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 56px;
+  }
+
+  .for-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  @media (max-width: 700px) {
+    .for-grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
+  }
+
+  .for-card {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px 32px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .for-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .for-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .for-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .for-lead {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .for-card p:last-child {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* ============================================
+     TESTIMONIALS (grid)
+     ============================================ */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 700px) {
+    .testimonial-grid { grid-template-columns: 1fr; max-width: 480px; }
+  }
+
+  .testimonial-card {
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    text-align: left;
+  }
+
+  .testimonial-card .testimonial-quote {
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    margin-bottom: 20px;
+  }
+
+  .testimonial-card .testimonial-attr {
+    font-size: 0.82rem;
+  }
+
   @media (max-width: 600px) {
     thead th, tbody td { padding: 12px 10px; font-size: 0.8rem; }
   }
@@ -697,6 +841,31 @@
   </div>
 </section>
 
+<!-- WHO IT'S FOR — dual audience -->
+<section class="for-section">
+  <div class="for-inner">
+    <div class="section-label">Who It's For</div>
+    <h2 class="section-title">Whether you're telling your story — or giving that gift to someone you love</h2>
+    <div class="for-grid">
+
+      <div class="for-card reveal">
+        <div class="for-icon">📖</div>
+        <h3>For You</h3>
+        <p class="for-lead">You've lived a life worth remembering.</p>
+        <p>The recipes you perfected, the lessons you learned the hard way, the stories your family asks you to tell again and again — they deserve to live beyond a dinner table conversation. This is your chance to put it all in one place, in your own words, for the people who matter most.</p>
+      </div>
+
+      <div class="for-card reveal">
+        <div class="for-icon">🎁</div>
+        <h3>As a Gift</h3>
+        <p class="for-lead">The most meaningful present you'll ever give.</p>
+        <p>Your parents and grandparents carry decades of wisdom, humor, and history that no one else can tell. A legacy book captures all of it — their voice, their journey, their advice — in something your whole family can hold onto for generations. It's the kind of gift that only gets more valuable with time.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- PRICING -->
 <section class="pricing-section" id="pricing">
   <div class="pricing-inner">
@@ -712,12 +881,13 @@
         <div class="card-price">$997</div>
         <p class="card-desc">A concise, beautiful account of your life's most meaningful chapters.</p>
         <ul class="card-features">
-          <li><span class="icon-check">✓</span> Up to 3 interview sessions</li>
+          <li><span class="icon-check">✓</span> Up to 2 interview sessions</li>
           <li><span class="icon-check">✓</span> ~15,000 word memoir</li>
           <li><span class="icon-check">✓</span> 1 round of revisions</li>
           <li><span class="icon-check">✓</span> Digital PDF copy</li>
+          <li><span class="icon-check">✓</span> Photo integration</li>
           <li class="disabled"><span class="icon-cross">—</span> Printed hardcover copies</li>
-          <li class="disabled"><span class="icon-cross">—</span> Photo integration</li>
+          <li class="disabled"><span class="icon-cross">—</span> Dedicated writer<sup>1</sup></li>
           <li class="disabled"><span class="icon-cross">—</span> Audio recording archive</li>
         </ul>
         <!-- REPLACE # with your Stripe Payment Link -->
@@ -732,12 +902,13 @@
         <div class="card-price">$2,497</div>
         <p class="card-desc">The full story — rich, detailed, and printed in a keepsake hardcover.</p>
         <ul class="card-features">
-          <li><span class="icon-check">✓</span> Up to 8 interview sessions</li>
+          <li><span class="icon-check">✓</span> Up to 4 interview sessions</li>
           <li><span class="icon-check">✓</span> ~40,000 word memoir</li>
           <li><span class="icon-check">✓</span> 3 rounds of revisions</li>
           <li><span class="icon-check">✓</span> Digital PDF copy</li>
-          <li><span class="icon-check">✓</span> 5 printed hardcover copies</li>
+          <li><span class="icon-check">✓</span> 2 printed hardcovers (+$25/ea.)</li>
           <li><span class="icon-check">✓</span> Photo integration</li>
+          <li><span class="icon-check">✓</span> Dedicated writer<sup>1</sup></li>
           <li class="disabled"><span class="icon-cross">—</span> Audio recording archive</li>
         </ul>
         <!-- REPLACE # with your Stripe Payment Link -->
@@ -751,12 +922,13 @@
         <div class="card-price">$4,997</div>
         <p class="card-desc">A premium, multi-generational archive — your complete life, preserved.</p>
         <ul class="card-features">
-          <li><span class="icon-check">✓</span> Unlimited interview sessions</li>
+          <li><span class="icon-check">✓</span> Unlimited interview sessions<sup>2</sup></li>
           <li><span class="icon-check">✓</span> ~80,000+ word memoir</li>
           <li><span class="icon-check">✓</span> Unlimited revisions</li>
           <li><span class="icon-check">✓</span> Digital PDF copy</li>
-          <li><span class="icon-check">✓</span> 10 printed hardcover copies</li>
+          <li><span class="icon-check">✓</span> 5 printed hardcovers (+$25/ea.)</li>
           <li><span class="icon-check">✓</span> Photo integration</li>
+          <li><span class="icon-check">✓</span> Dedicated writer<sup>1</sup></li>
           <li><span class="icon-check">✓</span> Audio recording archive</li>
         </ul>
         <!-- REPLACE # with your Stripe Payment Link -->
@@ -783,9 +955,9 @@
       <tbody>
         <tr>
           <td>Interview Sessions</td>
-          <td><span class="t-text">3</span></td>
-          <td><span class="t-text">8</span></td>
-          <td><span class="t-text">Unlimited</span></td>
+          <td><span class="t-text">2</span></td>
+          <td><span class="t-text">4</span></td>
+          <td><span class="t-text">Unlimited<sup>2</sup></span></td>
         </tr>
         <tr>
           <td>Word Count</td>
@@ -808,12 +980,12 @@
         <tr>
           <td>Printed Hardcovers</td>
           <td><span class="t-cross">✕</span></td>
-          <td><span class="t-text">5 copies</span></td>
-          <td><span class="t-text">10 copies</span></td>
+          <td><span class="t-text">2 (+$25/ea.)</span></td>
+          <td><span class="t-text">5 (+$25/ea.)</span></td>
         </tr>
         <tr>
           <td>Photo Integration</td>
-          <td><span class="t-cross">✕</span></td>
+          <td><span class="t-check">✓</span></td>
           <td><span class="t-check">✓</span></td>
           <td><span class="t-check">✓</span></td>
         </tr>
@@ -836,7 +1008,7 @@
           <td><span class="t-check">✓</span></td>
         </tr>
         <tr>
-          <td>Dedicated Writer</td>
+          <td>Dedicated Writer<sup>1</sup></td>
           <td><span class="t-cross">✕</span></td>
           <td><span class="t-check">✓</span></td>
           <td><span class="t-check">✓</span></td>
@@ -846,12 +1018,20 @@
   </div>
 </div>
 
-<!-- TESTIMONIAL -->
+<!-- TESTIMONIALS -->
 <section class="testimonial-section">
-  <div class="testimonial-inner reveal">
+  <div class="testimonial-inner">
     <div class="section-label">What Families Say</div>
-    <p class="testimonial-quote">"My mother's book sits on every grandchild's nightstand. It's the most meaningful gift our family has ever received."</p>
-    <p class="testimonial-attr">— Margaret S., daughter of a client</p>
+    <div class="testimonial-grid">
+      <div class="testimonial-card reveal">
+        <p class="testimonial-quote">"I never thought my life was interesting enough for a book. But seeing my grandchildren read about how I grew up, the adventures I had, the love I found — I realized these stories mattered more than I knew."</p>
+        <p class="testimonial-attr">— Robert K., 78, Heirloom client</p>
+      </div>
+      <div class="testimonial-card reveal">
+        <p class="testimonial-quote">"We gave this to our dad for his 70th birthday. He talks about the experience like it was one of the best things he's ever done. And now we have his whole life in a book our kids will grow up reading."</p>
+        <p class="testimonial-attr">— Jennifer &amp; Mark T., gifted a Legacy package</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -866,7 +1046,13 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>&copy; 2026 LegacyInk. All rights reserved. &nbsp;|&nbsp; <a href="#">Privacy</a> &nbsp;|&nbsp; <a href="#">Terms</a></p>
+  <div class="footer-disclaimers">
+    <p><sup>1</sup> Dedicated Writer means you'll be paired with a single writer who handles your entire project from first interview to final draft. They're your one point of contact for questions, revisions, and conversations throughout the process.</p>
+    <p><sup>2</sup> Unlimited interview sessions are provided at the writer's discretion based on the scope of your story. Additional sessions can always be requested if you feel there's more to tell.</p>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 LegacyInk. All rights reserved. &nbsp;|&nbsp; <a href="#">Privacy</a> &nbsp;|&nbsp; <a href="#">Terms</a></p>
+  </div>
 </footer>
 
 <!-- SCROLL REVEAL SCRIPT -->
